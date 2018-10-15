@@ -14,11 +14,12 @@ module Control.Concurrent.STM.TBQueue.Lifted
 import Control.Concurrent.STM.TBQueue as All hiding (newTBQueueIO)
 import qualified Control.Concurrent.STM.TBQueue as STM
 import Internal
+import GHC.Natural (Natural)
 
 ----------------------------------------------------------------------
 
 
-newTBQueueIO :: MonadIO m => Int -> m (TBQueue a)
+newTBQueueIO :: MonadIO m => Natural -> m (TBQueue a)
 newTBQueueIO = liftIO . STM.newTBQueueIO
 
 writeTBQueueIO :: MonadIO m => TBQueue a -> a -> m ()
