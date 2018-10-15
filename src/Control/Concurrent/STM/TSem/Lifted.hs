@@ -10,7 +10,7 @@ import Internal
 
 ----------------------------------------------------------------------
 
-newTSemIO :: MonadIO m => Int -> m TSem
+newTSemIO :: MonadIO m => Integer -> m TSem
 newTSemIO = atomically . newTSem
 
 waitTSemIO :: MonadIO m => TSem -> m ()
